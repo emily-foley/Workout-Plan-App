@@ -13,7 +13,7 @@ function Listings() {
     { 
       id: 1,  
       name: "Hoodie", 
-      image: 'https://picsum.photos/700',
+      image: 'https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1372&q=80',
       description: "Black hoodie" ,
       price: "30.00"
     },
@@ -58,7 +58,7 @@ function Listings() {
 function Products({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Products</Text>
+      <Text styles={{fontSize:25}}>Products</Text>
       <Listings></Listings>
       <Button title="Home" onPress={() => navigation.navigate('Home')} />
     </View>
@@ -119,6 +119,9 @@ const styles = StyleSheet.create({
   card: {
     padding:10, 
     margin:10, 
-    backgroundColor:"#ffff"
+    backgroundColor:"#e5e5e5"
+  },
+  pageTitle: {
+    fontSize: 25,
   }
 });
