@@ -6,13 +6,16 @@ import { FlatList } from 'react-native-gesture-handler';
 import { useState, useCallback } from "react";
 import { StatusBar } from 'expo-status-bar';
 
+function Listings() {
+
+}
+
 function Products({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Products</Text>
- 
+      <Listings></Listings>
       <Button title="Home" onPress={() => navigation.navigate('Home')} />
-
     </View>
   );
 }
@@ -21,6 +24,7 @@ function Screen2({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Screen 2</Text>
+      
       <Button title="Home" onPress={() => navigation.navigate('Home')} />
     </View>
   );
