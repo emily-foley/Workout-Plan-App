@@ -13,18 +13,21 @@ function Listings() {
     { 
       id: 1,  
       name: "Hoodie", 
+      image: 'https://picsum.photos/700',
       description: "Black hoodie" ,
       price: "30.00"
     },
     { 
       id: 2, 
       name: "Shorts", 
+      image: 'https://picsum.photos/700',
       description: "Womens running shorts",
       price: "18.00"
     },
     { 
       id: 3,  
       name: "T-shirt",
+      image: 'https://picsum.photos/700',
       description: "Oversized graphic tee",
       price: "15.00"
     },
@@ -32,7 +35,7 @@ function Listings() {
   const renderData = (item) => {
     return(
       <Card style = {styles.card}>
-        <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+        <Card.Cover source={{ uri: item.image }} />
         <Text style = {{fontSize:25}}>{item.name}</Text>
         <Text style = {{fontSize:15}}>{item.description}</Text>
         <Text style = {{fontSize:20}}>$ {item.price}</Text>
@@ -54,7 +57,7 @@ function Listings() {
 //Screen 1
 function Products({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.container}>
       <Text>Products</Text>
       <Listings></Listings>
       <Button title="Home" onPress={() => navigation.navigate('Home')} />
@@ -65,7 +68,7 @@ function Products({ navigation }) {
 //Screen 2
 function Screen2({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.container}>
       <Text>Screen 2</Text>
       
       <Button title="Home" onPress={() => navigation.navigate('Home')} />
