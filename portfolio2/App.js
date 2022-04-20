@@ -1,118 +1,44 @@
-import * as React from 'react';
-import { Button, View, Text, StyleSheet } from 'react-native';
+import React from 'react';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { FlatList } from 'react-native-gesture-handler';
-import { useState, useCallback } from "react";
-import { StatusBar } from 'expo-status-bar';
-import {Card} from 'react-native-paper';
-
-function Listings() {
-  let saleItems = [
-    { 
-      id: 1,  
-      name: "Hoodie", 
-      description: "Black hoodie" ,
-      price: "$30.00"
-    },
-    { 
-      id: 2, 
-      name: "Shorts", 
-      description: "Womens running shorts",
-      price: "$18.00"
-    },
-    { 
-      id: 3,  
-      name: "T-shirt",
-      description: "Oversized graphic tee",
-      price: "$15.00"
-    },
-  ]
-  const renderData = (item) => {
-    return(
-      <Card style = {styles.card}>
-        <Text style = {{fontSize:25}}>{item.name}</Text>
-        <Text style = {{fontSize:15}}>{item.description}</Text>
-      </Card>   
-    )
-  }
-
-  return (
-     
-    <FlatList
-    data = {saleItems}
-    renderItem = {({item}) => {
-        return renderData(item)
-    }}
-    keyExtractor = {item => `${item.id}`}
-
-    />   
-  
-  )
-}
-
-function Products({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Products</Text>
-      <Listings></Listings>
-      <Button title="Home" onPress={() => navigation.navigate('Home')} />
-    </View>
-  );
-}
-
-function Screen2({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Screen 2</Text>
-      
-      <Button title="Home" onPress={() => navigation.navigate('Home')} />
-    </View>
-  );
-}
-
-function HomeScreen({navigation}) {
-  return (
-    <View style={styles.container}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Browse products"
-        onPress={() => navigation.navigate('Products')}
-      />
-      <Button
-        title="Join our Newsletter"
-        onPress={() => navigation.navigate('Screen 2')}
-      />
-    </View>
-  );
-}
-
+import { ProductsList } from './screens/ProductsList.js';
+import { ProductDetails } from './screens/ProductDetails.js';
+import { Cart } from './screens/Cart.js';
+import { CartIcon } from './components/CartIcon.js';
+import { CartProvider } from './CartContext.js';
 const Stack = createNativeStackNavigator();
-
 function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Products" component={Products} />
-        <Stack.Screen name="Screen 2" component={Screen2} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <CartProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name='Products' component={ProductsList} 
+          options={({ navigation }) => ({
+            title: 'Products',
+            headerTitleStyle: styles.headerTitle,
+            headerRight: () => <CartIcon navigation={navigation}/>
+          })}/>
+          <Stack.Screen name='ProductDetails' component={ProductDetails} 
+          options={({ navigation }) => ({
+            title: 'Product details',
+            headerTitleStyle: styles.headerTitle,
+            headerRight: () => <CartIcon navigation={navigation}/>,
+          })} />
+          <Stack.Screen name='Cart' component={Cart} 
+          options={({ navigation }) => ({
+            title: 'My cart',
+            headerTitleStyle: styles.headerTitle,
+            headerRight: () => <CartIcon navigation={navigation}/>,
+          })} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </CartProvider>
   );
 }
-
-export default App;
-
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  card: {
-    padding:10, 
-    margin:10, 
-    backgroundColor:"#ffff"
+  headerTitle: {
+    fontSize: 20
   }
 });
+export default App;
