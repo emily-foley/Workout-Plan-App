@@ -1,4 +1,4 @@
-let saleItems = [
+let PRODUCTS = [
     { 
       id: 1,  
       name: "Hoodie", 
@@ -22,9 +22,9 @@ let saleItems = [
     },
   ];
 
-  export function getProducts() {
-    return PRODUCTS;
-  }
+  // export function getProducts() {
+  //   return PRODUCTS;
+  // }
   export function getProducts(id) {
     return PRODUCTS.find((product) => (product.id == id));
   }
