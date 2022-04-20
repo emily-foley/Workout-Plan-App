@@ -30,7 +30,7 @@ function Listings() {
   ]
   const renderData = (item) => {
     return(
-      <Card style = {{padding:10, margin:10, backgroundColor:"#eddfdf"}}>
+      <Card style = {styles.card}>
         <Text style = {{fontSize:25}}>{item.name}</Text>
         <Text style = {{fontSize:15}}>{item.description}</Text>
       </Card>   
@@ -110,11 +110,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
-    width: '400px',
-    marginBottom: '30px',
-  },
-  suggestedExercise: {
-    paddingTop: '100px',
+  card: {
+    padding:10, 
+    margin:10, 
+    backgroundColor:"#ffff"
   }
 });
