@@ -20,7 +20,7 @@ function Listings() {
     { 
       id: 2, 
       name: "Shorts", 
-      image: 'https://picsum.photos/700',
+      image: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
       description: "Womens running shorts",
       price: "18.00"
     },
@@ -117,6 +117,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   card: {
+    width: 500,
     padding:10, 
     margin:10, 
     backgroundColor:"#e5e5e5"
