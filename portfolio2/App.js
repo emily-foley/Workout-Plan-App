@@ -5,9 +5,50 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { FlatList } from 'react-native-gesture-handler';
 import { useState, useCallback } from "react";
 import { StatusBar } from 'expo-status-bar';
+import {Card} from 'react-native-paper';
 
 function Listings() {
+  let saleItems = [
+    { 
+      id: 1,  
+      name: "Hoodie", 
+      description: "Black hoodie" ,
+      price: "$30.00"
+    },
+    { 
+      id: 2, 
+      name: "Shorts", 
+      description: "Womens running shorts",
+      price: "$18.00"
+    },
+    { 
+      id: 3,  
+      name: "T-shirt",
+      description: "Oversized graphic tee",
+      price: "$15.00"
+    },
+  ]
+  const renderData = (item) => {
+    return(
+      <Card style = {{padding:10, margin:10, backgroundColor:"#eddfdf"}}>
+        <Text style = {{fontSize:25}}>{item.name}</Text>
+        <Text style = {{fontSize:15}}>{item.description}</Text>
+      </Card>   
+    )
+  }
 
+  return (
+     
+    <FlatList
+    data = {saleItems}
+    renderItem = {({item}) => {
+        return renderData(item)
+    }}
+    keyExtractor = {item => `${item.id}`}
+
+    />   
+  
+  )
 }
 
 function Products({ navigation }) {
