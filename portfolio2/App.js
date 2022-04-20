@@ -27,7 +27,7 @@ function Listings() {
     { 
       id: 3,  
       name: "T-shirt",
-      image: 'https://picsum.photos/700',
+      image: 'https://images.unsplash.com/photo-1622470953794-aa9c70b0fb9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
       description: "Oversized graphic tee",
       price: "15.00"
     },
@@ -117,9 +117,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   card: {
-    width: 500,
-    padding:10, 
-    margin:10, 
+    width: 400,
+    padding: 10, 
+    margin: 10, 
     backgroundColor:"#e5e5e5"
   },
   pageTitle: {
