@@ -6,12 +6,12 @@ import { FlatList } from 'react-native-gesture-handler';
 import { useState, useCallback } from "react";
 import { StatusBar } from 'expo-status-bar';
 
-function Screen1({ navigation }) {
+function products({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Screen 1</Text>
+      <Text>Products</Text>
  
-      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
+      <Button title="Home" onPress={() => navigation.navigate('Home')} />
 
     </View>
   );
@@ -21,7 +21,7 @@ function Screen2({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Screen 2</Text>
-      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
+      <Button title="Home" onPress={() => navigation.navigate('Home')} />
     </View>
   );
 }
@@ -31,8 +31,8 @@ function HomeScreen({navigation}) {
     <View style={styles.container}>
       <Text>Home Screen</Text>
       <Button
-        title="Go to Screen 1"
-        onPress={() => navigation.navigate('Screen 1')}
+        title="Browse products"
+        onPress={() => navigation.navigate('products')}
       />
       <Button
         title="Go to Screen 2"
@@ -49,7 +49,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Screen 1" component={Screen1} />
+        <Stack.Screen name="Products" component={products} />
         <Stack.Screen name="Screen 2" component={Screen2} />
       </Stack.Navigator>
     </NavigationContainer>
