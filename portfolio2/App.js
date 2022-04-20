@@ -7,36 +7,38 @@ import { useState, useCallback } from "react";
 import { StatusBar } from 'expo-status-bar';
 import {Card} from 'react-native-paper';
 
+//component 1
 function Listings() {
   let saleItems = [
     { 
       id: 1,  
       name: "Hoodie", 
       description: "Black hoodie" ,
-      price: "$30.00"
+      price: "30.00"
     },
     { 
       id: 2, 
       name: "Shorts", 
       description: "Womens running shorts",
-      price: "$18.00"
+      price: "18.00"
     },
     { 
       id: 3,  
       name: "T-shirt",
       description: "Oversized graphic tee",
-      price: "$15.00"
+      price: "15.00"
     },
   ]
   const renderData = (item) => {
     return(
       <Card style = {styles.card}>
+        <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
         <Text style = {{fontSize:25}}>{item.name}</Text>
         <Text style = {{fontSize:15}}>{item.description}</Text>
+        <Text style = {{fontSize:20}}>$ {item.price}</Text>
       </Card>   
     )
   }
-
   return (
      
     <FlatList
@@ -45,12 +47,11 @@ function Listings() {
         return renderData(item)
     }}
     keyExtractor = {item => `${item.id}`}
-
     />   
-  
   )
 }
 
+//Screen 1
 function Products({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -61,6 +62,7 @@ function Products({ navigation }) {
   );
 }
 
+//Screen 2
 function Screen2({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -71,6 +73,7 @@ function Screen2({ navigation }) {
   );
 }
 
+//Screen 3
 function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
