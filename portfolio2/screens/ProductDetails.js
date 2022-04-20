@@ -38,7 +38,7 @@ export function ProductDetails({route}) {
             <Button
             onPress={onAddToCart}
             title="Add to cart"
-            / >
+            />
         </View>
       </ScrollView>
     </SafeAreaView>
