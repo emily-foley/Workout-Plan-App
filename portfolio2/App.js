@@ -6,7 +6,7 @@ import { FlatList } from 'react-native-gesture-handler';
 import { useState, useCallback } from "react";
 import { StatusBar } from 'expo-status-bar';
 
-function products({ navigation }) {
+function Products({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Products</Text>
@@ -32,10 +32,10 @@ function HomeScreen({navigation}) {
       <Text>Home Screen</Text>
       <Button
         title="Browse products"
-        onPress={() => navigation.navigate('products')}
+        onPress={() => navigation.navigate('Products')}
       />
       <Button
-        title="Go to Screen 2"
+        title="Join our Newsletter"
         onPress={() => navigation.navigate('Screen 2')}
       />
     </View>
@@ -49,7 +49,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Products" component={products} />
+        <Stack.Screen name="Products" component={Products} />
         <Stack.Screen name="Screen 2" component={Screen2} />
       </Stack.Navigator>
     </NavigationContainer>
