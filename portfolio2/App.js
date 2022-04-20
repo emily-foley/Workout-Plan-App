@@ -20,6 +20,20 @@ function Screen1({ navigation }) {
   );
 }
 
+function Screen2({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Details Screen</Text>
+      <Button
+        title="Go to Screen 2... again"
+        onPress={() => navigation.push('Screen2')}
+      />
+      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
+      <Button title="Go back" onPress={() => navigation.goBack()} />
+    </View>
+  );
+}
+
 function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
@@ -27,6 +41,10 @@ function HomeScreen({navigation}) {
       <Button
         title="Go to Screen 1"
         onPress={() => navigation.navigate('Screen1')}
+      />
+      <Button
+        title="Go to Screen 2"
+        onPress={() => navigation.navigate('Screen2')}
       />
     </View>
   );
@@ -40,6 +58,7 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Screen1" component={Screen1} />
+        <Stack.Screen name="Screen2" component={Screen2} />
       </Stack.Navigator>
     </NavigationContainer>
   );
