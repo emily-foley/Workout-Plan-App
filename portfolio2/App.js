@@ -9,13 +9,10 @@ import { StatusBar } from 'expo-status-bar';
 function Screen1({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
-      <Button
-        title="Go to Screen 1... again"
-        onPress={() => navigation.push('Screen1')}
-      />
+      <Text>Screen 1</Text>
+ 
       <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
-      <Button title="Go back" onPress={() => navigation.goBack()} />
+
     </View>
   );
 }
@@ -23,13 +20,8 @@ function Screen1({ navigation }) {
 function Screen2({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
-      <Button
-        title="Go to Screen 2... again"
-        onPress={() => navigation.push('Screen2')}
-      />
+      <Text>Screen 2</Text>
       <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
-      <Button title="Go back" onPress={() => navigation.goBack()} />
     </View>
   );
 }
@@ -40,11 +32,11 @@ function HomeScreen({navigation}) {
       <Text>Home Screen</Text>
       <Button
         title="Go to Screen 1"
-        onPress={() => navigation.navigate('Screen1')}
+        onPress={() => navigation.navigate('Screen 1')}
       />
       <Button
         title="Go to Screen 2"
-        onPress={() => navigation.navigate('Screen2')}
+        onPress={() => navigation.navigate('Screen 2')}
       />
     </View>
   );
@@ -57,8 +49,8 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Screen1" component={Screen1} />
-        <Stack.Screen name="Screen2" component={Screen2} />
+        <Stack.Screen name="Screen 1" component={Screen1} />
+        <Stack.Screen name="Screen 2" component={Screen2} />
       </Stack.Navigator>
     </NavigationContainer>
   );
