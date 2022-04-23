@@ -5,12 +5,56 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { FlatList } from 'react-native-gesture-handler';
 import { useState, useCallback } from "react";
 import { StatusBar } from 'expo-status-bar';
+import {Card} from 'react-native-paper';
 
 const Stack = createNativeStackNavigator();
 
 function Warmups(){
-  
+  let saleItems = [
+    { 
+      id: 1,  
+      name: "Hoodie", 
+      image: 'https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1372&q=80',
+      description: "Black hoodie" ,
+      price: "30.00"
+    },
+    { 
+      id: 2, 
+      name: "Shorts", 
+      image: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+      description: "Womens running shorts",
+      price: "18.00"
+    },
+    { 
+      id: 3,  
+      name: "T-shirt",
+      image: 'https://images.unsplash.com/photo-1622470953794-aa9c70b0fb9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+      description: "Oversized graphic tee",
+      price: "15.00"
+    },
+  ]
+  const renderData = (item) => {
+    return(
+      <Card style = {styles.card}>
+        <Card.Cover source={{ uri: item.image }} />
+        <Text style = {{fontSize:25}}>{item.name}</Text>
+        <Text style = {{fontSize:15}}>{item.description}</Text>
+        <Text style = {{fontSize:20}}>$ {item.price}</Text>
+      </Card>   
+    )
+  }
+  return (
+     
+    <FlatList
+    data = {saleItems}
+    renderItem = {({item}) => {
+        return renderData(item)
+    }}
+    keyExtractor = {item => `${item.id}`}
+    />   
+  )
 }
+
 
 function ExerciseScreen({ route, navigation }) {
   let [count, setCount] = useState(0);
