@@ -3,14 +3,23 @@ import { Button, View, Text, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { FlatList } from 'react-native-gesture-handler';
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { StatusBar } from 'expo-status-bar';
 import {Card} from 'react-native-paper';
 
 const Stack = createNativeStackNavigator();
 
-function Cooldown(){
+function Cooldown({ seconds }) {
+  const [timeLeft, setTimeLeft] = useState(30);
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTimeLeft((t) => t - 1);
+    }, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
+
+  return <div>{timeLeft}s</div>;
 }
 
 
