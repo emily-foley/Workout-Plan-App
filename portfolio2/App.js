@@ -8,6 +8,10 @@ import { StatusBar } from 'expo-status-bar';
 
 const Stack = createNativeStackNavigator();
 
+function Warmups(){
+  
+}
+
 function ExerciseScreen({ route, navigation }) {
   let [count, setCount] = useState(0);
   let {exerciseList, exerciseKey } = route.params
@@ -63,6 +67,8 @@ function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
+      <Button title="Warm ups"
+        onPress={() => navigation.navigate('Warmups')}></Button>
       <FlatList 
         data={exerciseList}
         renderItem={
@@ -82,6 +88,7 @@ function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="RepetitionExercise" component={ExerciseScreen} />
+        <Stack.Screen name="Warmups" component={Warmups} />
       </Stack.Navigator>
     </NavigationContainer>
   );
