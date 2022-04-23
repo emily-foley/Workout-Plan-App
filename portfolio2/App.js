@@ -8,11 +8,11 @@ import { StatusBar } from 'expo-status-bar';
 import {Card} from 'react-native-paper';
 
 
-//component 2
-function Newsletter(){
+// //component 2
+// function Newsletter(){
 
 
-}
+// }
 
 //component 1
 function Listings() {
