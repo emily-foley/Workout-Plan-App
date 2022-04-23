@@ -19,17 +19,15 @@ function Warmups(){
     },
     { 
       id: 2, 
-      name: "Shorts", 
+      name: "Triceps stretch", 
       image: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-      description: "Womens running shorts",
-      price: "18.00"
+      description: "Bend your right elbow and reach your right hand to touch the top middle of your back.",
     },
     { 
       id: 3,  
       name: "T-shirt",
       image: 'https://images.unsplash.com/photo-1622470953794-aa9c70b0fb9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
       description: "Oversized graphic tee",
-      price: "15.00"
     },
   ]
   const renderData = (item) => {
