@@ -153,5 +153,11 @@ const styles = StyleSheet.create({
   },
   suggestedExercise: {
     paddingTop: '100px',
-  }
+  },
+  card: {
+    width: 400,
+    padding: 10, 
+    margin: 10, 
+    backgroundColor:"#e5e5e5"
+  },
 });
