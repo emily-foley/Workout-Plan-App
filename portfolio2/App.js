@@ -10,7 +10,7 @@ import {Card} from 'react-native-paper';
 const Stack = createNativeStackNavigator();
 
 function Warmups(){
-  let saleItems = [
+  let stretches = [
     { 
       id: 1,  
       name: "Hoodie", 
