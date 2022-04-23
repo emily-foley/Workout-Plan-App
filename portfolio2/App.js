@@ -38,7 +38,6 @@ function Warmups(){
         <Card.Cover source={{ uri: item.image }} />
         <Text style = {{fontSize:25}}>{item.name}</Text>
         <Text style = {{fontSize:15}}>{item.description}</Text>
-        <Text style = {{fontSize:20}}>$ {item.price}</Text>
       </Card>   
     )
   }
