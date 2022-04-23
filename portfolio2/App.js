@@ -9,31 +9,35 @@ import {Card} from 'react-native-paper';
 
 const Stack = createNativeStackNavigator();
 
+function Cooldown(){
+
+}
+
+
 function Warmups(){
   let stretches = [
     { 
       id: 1,  
       name: "Standing Hamstring Stretch", 
-      image: 'https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1372&q=80',
-      description: "Bend forward at the hips and touch your toes" ,
+      image: '../images/hamstringstretch.png',
     },
     { 
       id: 2, 
       name: "Triceps stretch", 
-      image: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+      image: '../images/tricepStretch.jpeg',
       description: "Bend your right elbow and reach your right hand to touch the top middle of your back.",
     },
     { 
       id: 3,  
       name: "Butterfly stretch",
-      image: 'https://images.unsplash.com/photo-1622470953794-aa9c70b0fb9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+      image: '../images/butterflyStretch.jpeg',
       description: "Sit on the floor or a prop with the soles of your feet pressing into each other.",
     },
   ]
   const renderData = (item) => {
     return(
       <Card style = {styles.card}>
-        <Card.Cover source={{ uri: item.image }} />
+        <Card.Cover source={item.image} />
         <Text style = {{fontSize:25}}>{item.name}</Text>
         <Text style = {{fontSize:15}}>{item.description}</Text>
       </Card>   
@@ -115,6 +119,8 @@ function HomeScreen({ navigation }) {
           ({ item }) => <Button onPress={() => gotoExercise(item)} title={item.name}></Button>
         }
       />
+      <Button title="Cool down"
+        onPress={() => navigation.navigate('Cooldown')}></Button>
       <StatusBar style='auto'/>
     </View>
   );
@@ -129,6 +135,7 @@ function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="RepetitionExercise" component={ExerciseScreen} />
         <Stack.Screen name="Warmups" component={Warmups} />
+        <Stack.Screen name="Cooldown" component={Cooldown} />
       </Stack.Navigator>
     </NavigationContainer>
   );
