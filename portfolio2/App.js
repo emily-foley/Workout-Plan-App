@@ -5,110 +5,83 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { FlatList } from 'react-native-gesture-handler';
 import { useState, useCallback } from "react";
 import { StatusBar } from 'expo-status-bar';
-import {Card} from 'react-native-paper';
 
+const Stack = createNativeStackNavigator();
 
-// //component 2
-// function Newsletter(){
-
-
-// }
-
-//component 1
-function Listings() {
-  let saleItems = [
-    { 
-      id: 1,  
-      name: "Hoodie", 
-      image: 'https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1372&q=80',
-      description: "Black hoodie" ,
-      price: "30.00"
-    },
-    { 
-      id: 2, 
-      name: "Shorts", 
-      image: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-      description: "Womens running shorts",
-      price: "18.00"
-    },
-    { 
-      id: 3,  
-      name: "T-shirt",
-      image: 'https://images.unsplash.com/photo-1622470953794-aa9c70b0fb9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-      description: "Oversized graphic tee",
-      price: "15.00"
-    },
-  ]
-  const renderData = (item) => {
-    return(
-      <Card style = {styles.card}>
-        <Card.Cover source={{ uri: item.image }} />
-        <Text style = {{fontSize:25}}>{item.name}</Text>
-        <Text style = {{fontSize:15}}>{item.description}</Text>
-        <Text style = {{fontSize:20}}>$ {item.price}</Text>
-      </Card>   
-    )
-  }
-  return (
-     
-    <FlatList
-    data = {saleItems}
-    renderItem = {({item}) => {
-        return renderData(item)
-    }}
-    keyExtractor = {item => `${item.id}`}
-    />   
-  )
-}
-
-//Screen 1
-function Products({ navigation }) {
+function ExerciseScreen({ route, navigation }) {
+  let [count, setCount] = useState(0);
+  let {exerciseList, exerciseKey } = route.params
+  let gotoExercise = useCallback(() => {
+    navigation.push("RepetitionExercise", { exerciseList: exerciseList, exerciseKey: currentExercise.suggestedKey, count: route.params.count + 1})
+  })
+  let currentExercise = exerciseList.find(ex => ex.key === exerciseKey)
   return (
     <View style={styles.container}>
-      <Text styles={{fontSize:25}}>Products</Text>
-      <Listings></Listings>
-      <Button title="Home" onPress={() => navigation.navigate('Home')} />
-    </View>
-  );
-}
+      <Text style={styles.text}>{currentExercise.name} : {currentExercise.description}</Text>
 
-//Screen 2
-function Screen2({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <Text>Screen 2</Text>
+      <Text>Reps: {count}</Text>
+      <Button title="Complete rep" onPress={() => setCount(count + 1)}></Button>
+      <Button title="Reset" onPress={() => setCount(0)}>Reset</Button>
       
-      <Button title="Home" onPress={() => navigation.navigate('Home')} />
+      <Text styles={styles.suggestedExercise}>Suggested exercise:</Text>
+      <Button onPress={gotoExercise} title="Go to Screen"></Button>
+
+      <Button title="Home" onPress={() => navigation.navigate('Home')}></Button>
+
+      <StatusBar style='auto'/>
     </View>
   );
 }
 
-//Screen 3
-function HomeScreen({navigation}) {
+
+function HomeScreen({ navigation }) {
+  let exerciseList = [
+  { 
+    key: "1",  
+    name: "Pushups", 
+    description: "Done laying with face, palms and toes facing down, keeping legs and back straight, extending arms straight to push body up and back down again" ,
+    suggestedKey: "2"
+  },
+  { 
+    key: "2", 
+    name: "Jumping Jacks", 
+    description: "Performed from a standing position by jumping to a position with legs spread and arms raised",
+    suggestedKey: "3"
+  },
+  { 
+    key: "3",  
+    name: "Sit ups",
+    description: "Done by lying on your back and lifting your torso",
+    suggestedKey: "1"
+  },
+]
+
+  let gotoExercise = useCallback(({ key }) => {
+    navigation.navigate("RepetitionExercise", { exerciseKey: key, count: 0, exerciseList })
+  })
+
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
-      <Button
-        title="Browse products"
-        onPress={() => navigation.navigate('Products')}
+      <FlatList 
+        data={exerciseList}
+        renderItem={
+          ({ item }) => <Button onPress={() => gotoExercise(item)} title={item.name}></Button>
+        }
       />
-      <Button
-        title="Join our Newsletter"
-        onPress={() => navigation.navigate('Screen 2')}
-      />
+      <StatusBar style='auto'/>
     </View>
   );
 }
 
-const Stack = createNativeStackNavigator();
+
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Products" component={Products} />
-        <Stack.Screen name="Screen 2" component={Screen2} />
+        <Stack.Screen name="RepetitionExercise" component={ExerciseScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -123,13 +96,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  card: {
-    width: 400,
-    padding: 10, 
-    margin: 10, 
-    backgroundColor:"#e5e5e5"
+  text: {
+    width: '400px',
+    marginBottom: '30px',
   },
-  pageTitle: {
-    fontSize: 25,
+  suggestedExercise: {
+    paddingTop: '100px',
   }
 });
