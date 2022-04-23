@@ -13,10 +13,9 @@ function Warmups(){
   let stretches = [
     { 
       id: 1,  
-      name: "Hoodie", 
+      name: "Standing Hamstring Stretch", 
       image: 'https://images.unsplash.com/photo-1620799140188-3b2a02fd9a77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1372&q=80',
-      description: "Black hoodie" ,
-      price: "30.00"
+      description: "Bend forward at the hips and touch your toes" ,
     },
     { 
       id: 2, 
@@ -46,7 +45,7 @@ function Warmups(){
   return (
      
     <FlatList
-    data = {saleItems}
+    data = {stretches}
     renderItem = {({item}) => {
         return renderData(item)
     }}
