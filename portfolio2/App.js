@@ -9,17 +9,25 @@ import {Card} from 'react-native-paper';
 
 const Stack = createNativeStackNavigator();
 
-function Cooldown({ seconds }) {
-  const [timeLeft, setTimeLeft] = useState(30);
+function Cooldown() {
+  const [seconds, setSeconds] = useState(30);
+const [pause, setPause] = useState(false);
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setTimeLeft((t) => t - 1);
-    }, 1000);
-    return () => clearInterval(intervalId);
-  }, []);
+useEffect(() => {
+  const interval = setInterval(() => {
+    if(!pause) { //I used '!paused' because I set pause initially to false. 
+      if (seconds > 0) {
+        setSeconds(seconds - 1);
+      }
+    }
+  }, 1000);
+  return () => clearInterval(interval);
+});
 
-  return <div>{timeLeft}s</div>;
+const handlePauseToggle = () => {
+  setPause(!pause);
+}
+
 }
 
 
