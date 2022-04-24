@@ -56,7 +56,7 @@ function Cooldown({navigation}) {
           <Text style={styles.btnText}>Reset</Text>
       </TouchableOpacity>
       <TouchableOpacity 
-        style={styles.button} 
+        style={styles.homeButton} 
         onPress={() => navigation.navigate('Home')}>
           <Text style={styles.btnText}>Home</Text>
       </TouchableOpacity>
@@ -105,7 +105,7 @@ function Warmups({navigation}){
       keyExtractor = {item => `${item.id}`}
       /> 
       <TouchableOpacity 
-          style={styles.button} 
+          style={styles.homeButton} 
           onPress={() => navigation.navigate('Home')}>
             <Text style={styles.btnText}>Home</Text>
       </TouchableOpacity>  
@@ -144,7 +144,7 @@ function ExerciseScreen({ route, navigation }) {
           <Text style={styles.btnText}>Go to Screen</Text>
       </TouchableOpacity>
       <TouchableOpacity 
-        style={styles.button} 
+        style={styles.homeButton} 
         onPress={() => navigation.navigate('Home')}>
           <Text style={styles.btnText}>Home</Text>
       </TouchableOpacity>
@@ -229,7 +229,7 @@ export default App;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#c3cbd6',
+    backgroundColor: '#eddcd9',
     alignItems: 'center',
     justifyContent: 'center',
   },
