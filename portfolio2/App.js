@@ -227,23 +227,23 @@ export default App;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#e0d9d0',
+    backgroundColor: '#c3cbd6',
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
-    width: '400px',
+    width: '300px',
     marginBottom: '30px',
   },
   card: {
-    width: 400,
+    width: 300,
     padding: 10, 
     margin: 10, 
-    backgroundColor:"#e5e5e5"
+    backgroundColor:"#fff"
   },
   button: {
     alignItems: "center",
-    backgroundColor: "#009688",
+    backgroundColor: "#2a403d",
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 12,
