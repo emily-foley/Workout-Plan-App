@@ -40,7 +40,7 @@ function Cooldown() {
         {seconds}s
       </div>
       <div className="row">
-        <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
+        <button onClick={toggle}>
           {isActive ? 'Pause' : 'Start'}
         </button>
         <button className="button" onClick={reset}>
