@@ -135,7 +135,7 @@ function ExerciseScreen({ route, navigation }) {
         onPress={() => setCount(0)}>
           <Text style={styles.btnText}>Reset</Text>
       </TouchableOpacity>
-      <Text styles={styles.suggestedExercise}>Suggested exercise:</Text>
+      <Text style={styles.heading2}>Suggested exercise:</Text>
       <TouchableOpacity 
         style={styles.button} 
         onPress={gotoExercise}>
@@ -235,9 +235,6 @@ const styles = StyleSheet.create({
     width: '400px',
     marginBottom: '30px',
   },
-  suggestedExercise: {
-    paddingTop: '100px',
-  },
   card: {
     width: 400,
     padding: 10, 
@@ -269,6 +266,6 @@ const styles = StyleSheet.create({
   },
   heading2: {
     fontSize: 25,
-    paddingBottom: 20,
+    paddingBottom: 15,
   }
 });
