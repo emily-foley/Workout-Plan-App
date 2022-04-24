@@ -183,7 +183,7 @@ function HomeScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Home Screen</Text>
+      <Text style={styles.heading}>Workout Plan</Text>
       <TouchableOpacity 
         style={styles.button} 
         onPress={() => navigation.navigate('Warmups')}>
@@ -217,7 +217,7 @@ function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} options={{
           headerStyle: {
-            backgroundColor: '#d85678',
+            backgroundColor: '#e99f4c',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
@@ -226,7 +226,7 @@ function App() {
         }}/>
         <Stack.Screen name="RepetitionExercise" component={ExerciseScreen} options={{
           headerStyle: {
-            backgroundColor: '#d85678',
+            backgroundColor: '#e99f4c',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
@@ -235,7 +235,7 @@ function App() {
         }}/>
         <Stack.Screen name="Warmups" component={Warmups} options={{
           headerStyle: {
-            backgroundColor: '#d85678',
+            backgroundColor: '#e99f4c',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
@@ -244,7 +244,7 @@ function App() {
         }}/>
         <Stack.Screen name="Cooldown" component={Cooldown} options={{
           headerStyle: {
-            backgroundColor: '#d85678',
+            backgroundColor: '#e99f4c',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
@@ -298,7 +298,7 @@ const styles = StyleSheet.create({
     fontSize: 40,
     paddingBottom: 40,
     paddingTop: 50,
-    color: 'd85678',
+    color: '#d85678',
   },
   heading2: {
     fontSize: 25,
