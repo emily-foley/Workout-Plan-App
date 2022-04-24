@@ -89,7 +89,7 @@ function Warmups({navigation}){
   const renderData = (item) => {
     return(
       <Card style = {styles.card}>
-        <Card.Cover source={item.image} />
+        <Card.Cover source={{uri: item.image}}/>
         <Text style = {{fontSize:25}}>{item.name}</Text>
         <Text style = {{fontSize:15}}>{item.description}</Text>
       </Card>   
