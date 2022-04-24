@@ -41,7 +41,11 @@ function Cooldown() {
   }, [isActive, seconds]);
 
   return (
-    <Text>{seconds}s</Text>
+    <View>
+      <Text>{seconds}s</Text>
+      <TouchableOpacity style={styles.button} onPress={toggle}>{isActive ? 'Pause' : 'Start'}</TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={reset}>Reset</TouchableOpacity>
+    </View>
   );
 };
 
@@ -195,5 +199,10 @@ const styles = StyleSheet.create({
     padding: 10, 
     margin: 10, 
     backgroundColor:"#e5e5e5"
+  },
+  button: {
+    alignItems: "center",
+    backgroundColor: "#DDDDDD",
+    padding: 10,
   },
 });
