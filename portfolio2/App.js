@@ -263,6 +263,7 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 40,
     paddingBottom: 40,
+    paddingTop: 50,
   },
   heading2: {
     fontSize: 25,
