@@ -121,9 +121,10 @@ function ExerciseScreen({ route, navigation }) {
   let currentExercise = exerciseList.find(ex => ex.key === exerciseKey)
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{currentExercise.name} : {currentExercise.description}</Text>
+      <Text style={styles.heading}>{currentExercise.name}</Text>
+      <Text style={styles.text}>{currentExercise.description}</Text>
 
-      <Text>Reps: {count}</Text>
+      <Text style={styles.heading2}>Reps: {count}</Text>
       <TouchableOpacity 
         style={styles.button} 
         onPress={() => setCount(count + 1)}>
@@ -265,5 +266,9 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 40,
     paddingBottom: 40,
+  },
+  heading2: {
+    fontSize: 25,
+    paddingBottom: 20,
   }
 });
