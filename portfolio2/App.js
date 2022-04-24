@@ -180,7 +180,7 @@ function HomeScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text>Home Screen</Text>
+      <Text style={styles.heading}>Home Screen</Text>
       <TouchableOpacity 
         style={styles.button} 
         onPress={() => navigation.navigate('Warmups')}>
@@ -261,5 +261,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     justifyContent: "center",
     textAlign: "center",
+  },
+  heading: {
+    fontSize: 40,
+    paddingBottom: 40,
   }
 });
