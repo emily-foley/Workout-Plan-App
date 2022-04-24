@@ -187,7 +187,7 @@ function HomeScreen({ navigation }) {
           <TouchableOpacity 
             style={styles.button} 
             onPress={() => gotoExercise(item)}>
-              {item.name}
+              <Text style={styles.btnText}>{item.name}</Text>
           </TouchableOpacity>
         }
       />
