@@ -41,8 +41,8 @@ function Cooldown() {
   }, [isActive, seconds]);
 
   return (
-    <View>
-      <Text>{seconds}s</Text>
+    <View style={styles.container}>
+      <Text style={styles.timerText}>{seconds}s</Text>
       <TouchableOpacity style={styles.button} onPress={toggle}>{isActive ? 'Pause' : 'Start'}</TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={reset}>Reset</TouchableOpacity>
     </View>
@@ -208,4 +208,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     width: '50%',
   },
+  timerText: {
+    fontSize: 100,
+    paddingBottom: 50,
+  }
 });
