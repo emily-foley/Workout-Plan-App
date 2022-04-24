@@ -10,15 +10,19 @@ import {Card} from 'react-native-paper';
 const Stack = createNativeStackNavigator();
 
 function Cooldown() {
-  const [seconds, setSeconds] = useState(30);
-  const [isActive, setIsActive] = useState(false);
+  //storing the number of seconds and setting seconds to 45
+  let [seconds, setSeconds] = useState(45);
+  //storing the timer's state (active/timing or paused), setting the default to paused (false)
+  let [isActive, setIsActive] = useState(false);
 
+  //setting the value of isActive to the opposite of what it is (if it is paused it will switch to timing and vice versa)
   function toggle() {
     setIsActive(!isActive);
   }
 
+  //resetting the timer by setting seconds to 45 and setting isActive to false 
   function reset() {
-    setSeconds(30);
+    setSeconds(45);
     setIsActive(false);
   }
 
