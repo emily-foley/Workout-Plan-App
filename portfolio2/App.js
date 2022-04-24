@@ -9,7 +9,7 @@ import {Card} from 'react-native-paper';
 
 const Stack = createNativeStackNavigator();
 
-function Cooldown() {
+function Cooldown({navigation}) {
   //storing the number of seconds and setting seconds to 45
   let [seconds, setSeconds] = useState(45);
   //storing the timer's state (active/timing or paused), setting the default to paused (false)
@@ -52,7 +52,12 @@ function Cooldown() {
         style={styles.button} 
         onPress={reset}>
           <Text style={styles.btnText}>Reset</Text>
-        </TouchableOpacity>
+      </TouchableOpacity>
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={() => navigation.navigate('Home')}>
+          <Text style={styles.btnText}>Home</Text>
+      </TouchableOpacity>
     </View>
   );
 };
