@@ -103,12 +103,7 @@ function Warmups({navigation}){
           return renderData(item)
       }}
       keyExtractor = {item => `${item.id}`}
-      /> 
-      <TouchableOpacity 
-        style={styles.homeButton} 
-        onPress={() => navigation.navigate('RepetitionExercise')}>
-          <Text style={styles.btnText}>Begin Exercise</Text>
-      </TouchableOpacity>
+      />
       <TouchableOpacity 
           style={styles.homeButton} 
           onPress={() => navigation.navigate('Home')}>
