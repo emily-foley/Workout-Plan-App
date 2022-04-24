@@ -183,7 +183,12 @@ function HomeScreen({ navigation }) {
       <FlatList 
         data={exerciseList}
         renderItem={
-          ({ item }) => <Button onPress={() => gotoExercise(item)} title={item.name}></Button>
+          ({ item }) => 
+          <TouchableOpacity 
+            style={styles.button} 
+            onPress={() => gotoExercise(item)}>
+              {item.name}
+          </TouchableOpacity>
         }
       />
       <TouchableOpacity 
