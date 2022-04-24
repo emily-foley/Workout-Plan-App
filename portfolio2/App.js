@@ -42,6 +42,8 @@ function Cooldown({navigation}) {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.heading}>Cool Down</Text>
+      <Text style={styles.text}>Take 45 seconds to cool down by taking deep breaths in and out. Close your eyes and use this time to meditate as you start to relax.</Text>
       <Text style={styles.timerText}>{seconds}s</Text>
       <TouchableOpacity 
         style={styles.button} 
