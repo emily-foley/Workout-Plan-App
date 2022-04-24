@@ -217,16 +217,40 @@ function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} options={{
           headerStyle: {
-            backgroundColor: '#e99f4c',
+            backgroundColor: '#d85678',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
             fontWeight: 'bold',
           },
         }}/>
-        <Stack.Screen name="RepetitionExercise" component={ExerciseScreen} />
-        <Stack.Screen name="Warmups" component={Warmups} />
-        <Stack.Screen name="Cooldown" component={Cooldown} />
+        <Stack.Screen name="RepetitionExercise" component={ExerciseScreen} options={{
+          headerStyle: {
+            backgroundColor: '#d85678',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}/>
+        <Stack.Screen name="Warmups" component={Warmups} options={{
+          headerStyle: {
+            backgroundColor: '#d85678',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}/>
+        <Stack.Screen name="Cooldown" component={Cooldown} options={{
+          headerStyle: {
+            backgroundColor: '#d85678',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -274,6 +298,7 @@ const styles = StyleSheet.create({
     fontSize: 40,
     paddingBottom: 40,
     paddingTop: 50,
+    color: 'd85678',
   },
   heading2: {
     fontSize: 25,
