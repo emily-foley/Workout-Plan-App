@@ -275,5 +275,14 @@ const styles = StyleSheet.create({
     fontSize: 25,
     paddingBottom: 15,
     paddingTop: 20,
+  },
+  homeButton: {
+    alignItems: "center",
+    backgroundColor: "#e99f4c",
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    width: 100,
+    margin: 5,
   }
 });
