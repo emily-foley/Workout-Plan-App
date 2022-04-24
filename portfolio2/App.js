@@ -10,7 +10,7 @@ import {Card} from 'react-native-paper';
 const Stack = createNativeStackNavigator();
 
 function Cooldown() {
-  const [seconds, setSeconds] = useState(0);
+  const [seconds, setSeconds] = useState(30);
   const [isActive, setIsActive] = useState(false);
 
   function toggle() {
@@ -18,7 +18,7 @@ function Cooldown() {
   }
 
   function reset() {
-    setSeconds(0);
+    setSeconds(30);
     setIsActive(false);
   }
 
@@ -26,7 +26,7 @@ function Cooldown() {
     let interval = null;
     if (isActive) {
       interval = setInterval(() => {
-        setSeconds(seconds => seconds + 1);
+        setSeconds(seconds => seconds - 1);
       }, 1000);
     } else if (!isActive && seconds !== 0) {
       clearInterval(interval);
