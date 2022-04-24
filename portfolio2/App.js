@@ -206,7 +206,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 12,
-    width: '50%',
+    width: '30%',
+    margin: 5,
   },
   timerText: {
     fontSize: 100,
