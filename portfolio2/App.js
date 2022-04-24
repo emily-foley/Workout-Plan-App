@@ -118,13 +118,27 @@ function ExerciseScreen({ route, navigation }) {
       <Text style={styles.text}>{currentExercise.name} : {currentExercise.description}</Text>
 
       <Text>Reps: {count}</Text>
-      <Button title="Complete rep" onPress={() => setCount(count + 1)}></Button>
-      <Button title="Reset" onPress={() => setCount(0)}>Reset</Button>
-      
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={() => setCount(count + 1)}>
+          <Text style={styles.btnText}>Complete rep</Text>
+      </TouchableOpacity>
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={() => setCount(0)}>
+          <Text style={styles.btnText}>Reset</Text>
+      </TouchableOpacity>
       <Text styles={styles.suggestedExercise}>Suggested exercise:</Text>
-      <Button onPress={gotoExercise} title="Go to Screen"></Button>
-
-      <Button title="Home" onPress={() => navigation.navigate('Home')}></Button>
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={gotoExercise}>
+          <Text style={styles.btnText}>Go to Screen</Text>
+      </TouchableOpacity>
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={() => navigation.navigate('Home')}>
+          <Text style={styles.btnText}>Home</Text>
+      </TouchableOpacity>
 
       <StatusBar style='auto'/>
     </View>
@@ -161,21 +175,26 @@ function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
-      <Button title="Warm ups"
-        onPress={() => navigation.navigate('Warmups')}></Button>
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={() => navigation.navigate('Warmups')}>
+          <Text style={styles.btnText}>Warm ups</Text>
+      </TouchableOpacity>
       <FlatList 
         data={exerciseList}
         renderItem={
           ({ item }) => <Button onPress={() => gotoExercise(item)} title={item.name}></Button>
         }
       />
-      <Button title="Cool down"
-        onPress={() => navigation.navigate('Cooldown')}></Button>
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={() => navigation.navigate('Cooldown')}>
+          <Text style={styles.btnText}>Cool down</Text>
+      </TouchableOpacity>
       <StatusBar style='auto'/>
     </View>
   );
 }
-
 
 
 function App() {
