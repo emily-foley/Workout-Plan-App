@@ -64,7 +64,7 @@ function Cooldown({navigation}) {
 
 
 
-function Warmups(){
+function Warmups({navigation}){
   let stretches = [
     { 
       id: 1,  
@@ -94,14 +94,20 @@ function Warmups(){
     )
   }
   return (
-     
-    <FlatList
-    data = {stretches}
-    renderItem = {({item}) => {
-        return renderData(item)
-    }}
-    keyExtractor = {item => `${item.id}`}
-    />   
+    <View style={styles.container}>
+      <FlatList
+      data = {stretches}
+      renderItem = {({item}) => {
+          return renderData(item)
+      }}
+      keyExtractor = {item => `${item.id}`}
+      /> 
+      <TouchableOpacity 
+          style={styles.button} 
+          onPress={() => navigation.navigate('Home')}>
+            <Text style={styles.btnText}>Home</Text>
+      </TouchableOpacity>  
+    </View>
   )
 }
 
@@ -243,7 +249,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 12,
-    width: '20%',
+    width: 100,
     margin: 5,
   },
   timerText: {
