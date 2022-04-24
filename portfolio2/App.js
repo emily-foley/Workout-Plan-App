@@ -26,6 +26,8 @@ function Cooldown() {
     setIsActive(false);
   }
 
+  //if isActive is true set the interval to decrease by 1 every 1000 milliseconds
+  //if setActive is false, the interval is cleared
   useEffect(() => {
     let interval = null;
     if (isActive) {
@@ -39,15 +41,15 @@ function Cooldown() {
   }, [isActive, seconds]);
 
   return (
-    <div className="app">
-      <div className="time">
+    <div>
+      <div>
         {seconds}s
       </div>
-      <div className="row">
+      <div>
         <button onClick={toggle}>
           {isActive ? 'Pause' : 'Start'}
         </button>
-        <button className="button" onClick={reset}>
+        <button onClick={reset}>
           Reset
         </button>
       </div>
