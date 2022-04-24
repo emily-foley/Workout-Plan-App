@@ -43,8 +43,16 @@ function Cooldown() {
   return (
     <View style={styles.container}>
       <Text style={styles.timerText}>{seconds}s</Text>
-      <TouchableOpacity style={styles.button} onPress={toggle}>{isActive ? 'Pause' : 'Start'}</TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={reset}>Reset</TouchableOpacity>
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={toggle}>
+          <Text style={styles.btnText}>{isActive ? 'Pause' : 'Start'}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={reset}>
+          <Text style={styles.btnText}>Reset</Text>
+        </TouchableOpacity>
     </View>
   );
 };
@@ -206,11 +214,17 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 12,
-    width: '30%',
+    width: '20%',
     margin: 5,
   },
   timerText: {
     fontSize: 100,
     paddingBottom: 50,
+  },
+  btnText: {
+    color: "white",
+    fontSize: 20,
+    justifyContent: "center",
+    textAlign: "center",
   }
 });
