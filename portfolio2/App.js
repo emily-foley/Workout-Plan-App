@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, View, Text, StyleSheet } from 'react-native';
+import { Button, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { FlatList } from 'react-native-gesture-handler';
@@ -41,19 +41,7 @@ function Cooldown() {
   }, [isActive, seconds]);
 
   return (
-    <div>
-      <div>
-        {seconds}s
-      </div>
-      <div>
-        <button onClick={toggle}>
-          {isActive ? 'Pause' : 'Start'}
-        </button>
-        <button onClick={reset}>
-          Reset
-        </button>
-      </div>
-    </div>
+    <Text>{seconds}s</Text>
   );
 };
 
