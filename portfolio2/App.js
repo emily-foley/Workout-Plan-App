@@ -192,6 +192,7 @@ function HomeScreen({ navigation }) {
           <Text style={styles.btnText}>Warm ups</Text>
       </TouchableOpacity>
       <FlatList 
+        style={styles.flatList}
         data={exerciseList}
         renderItem={
           ({ item }) => 
@@ -282,7 +283,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#2a403d",
     borderRadius: 10,
     paddingVertical: 10,
-    paddingHorizontal: 12,
+    paddingHorizontal: 15,
     width: 100,
     margin: 5,
   },
@@ -320,5 +321,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     width: 100,
     margin: 5,
+  },
+  flatList: {
+    marginBottom:0,
+    paddingBottom: 0,
   }
 });
