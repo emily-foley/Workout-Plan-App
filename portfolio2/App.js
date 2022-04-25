@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { FlatList } from 'react-native-gesture-handler';
@@ -124,7 +124,7 @@ function ExerciseScreen({ route, navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>{currentExercise.name}</Text>
-      <Text style={styles.text}>{currentExercise.description}</Text>
+      <Text style={styles.text}>{currentExercise.description}</Text> 
 
       <Text style={styles.heading2}>Reps: {count}</Text>
       <TouchableOpacity 
