@@ -97,6 +97,8 @@ function Warmups({navigation}){
   }
   return (
     <View style={styles.container}>
+      <Text style={styles.heading}>Warm ups</Text>
+      <Text style={styles.text}>Warming up before exercising can help increase performance and reduce chances of injury. Do these warm ups before you start your exercise.</Text>
       <FlatList
       data = {stretches}
       renderItem = {({item}) => {
