@@ -295,6 +295,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   heading: {
+    fontWeight: 700,
     fontSize: 40,
     paddingBottom: 40,
     paddingTop: 50,
