@@ -1,5 +1,7 @@
 # Workout Plan App
 
+https://emily-foley.github.io/Workout-Plan-App/
+
 This react native project is a workout plan app that includes four screens and three main components. 
 
 The home screen displays buttons for each part of the workout routine. The first button leads to the warm ups page. Inside of this page, the Warmups component displays a flatlist of cards, each with a different image and text description for the warmup. 
