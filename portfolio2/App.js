@@ -323,7 +323,6 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   flatList: {
-    marginBottom:0,
-    paddingBottom: 0,
+    flexGrow: 0,
   }
 });
