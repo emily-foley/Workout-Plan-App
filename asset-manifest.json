@@ -1,0 +1,23 @@
+{
+  "files": {
+    "app.js": "/Workout-Plan-App/static/js/app.de34664f.chunk.js",
+    "app.js.map": "/Workout-Plan-App/static/js/app.de34664f.chunk.js.map",
+    "runtime~app.js": "/Workout-Plan-App/static/js/runtime~app.2b737bfd.js",
+    "runtime~app.js.map": "/Workout-Plan-App/static/js/runtime~app.2b737bfd.js.map",
+    "static/js/2.c97be524.chunk.js": "/Workout-Plan-App/static/js/2.c97be524.chunk.js",
+    "static/js/2.c97be524.chunk.js.map": "/Workout-Plan-App/static/js/2.c97be524.chunk.js.map",
+    "fonts/MaterialCommunityIcons.ttf": "/Workout-Plan-App/./fonts/MaterialCommunityIcons.ttf",
+    "favicon-16.png": "/Workout-Plan-App/favicon-16.png",
+    "favicon-32.png": "/Workout-Plan-App/favicon-32.png",
+    "favicon.ico": "/Workout-Plan-App/favicon.ico",
+    "index.html": "/Workout-Plan-App/index.html",
+    "manifest.json": "/Workout-Plan-App/manifest.json",
+    "serve.json": "/Workout-Plan-App/serve.json",
+    "static/js/2.c97be524.chunk.js.LICENSE.txt": "/Workout-Plan-App/static/js/2.c97be524.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime~app.2b737bfd.js",
+    "static/js/2.c97be524.chunk.js",
+    "static/js/app.de34664f.chunk.js"
+  ]
+}
