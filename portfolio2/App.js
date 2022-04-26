@@ -9,6 +9,55 @@ import {Card} from 'react-native-paper';
 
 const Stack = createNativeStackNavigator();
 
+function Warmups({navigation}){
+  let stretches = [
+    { 
+      id: 1,  
+      name: "Standing Hamstring Stretch", 
+      image: 'https://media.self.com/photos/5a305db96c2fc24013a0aa78/master/w_728,c_limit/2_1Self.jpg',
+    },
+    { 
+      id: 2, 
+      name: "Triceps stretch", 
+      image: 'https://www.womenfitness.net/img2016/components/flex-triceps-stretch.jpg',
+      description: "Bend your right elbow and reach your right hand to touch the top middle of your back.",
+    },
+    { 
+      id: 3,  
+      name: "Butterfly stretch",
+      image: 'https://www.verywellfit.com/thmb/umsZNk7EYmmCNb6N_NQtw7SC4yA=/2667x2000/smart/filters:no_upscale()/87-3120294-ButterflyStretches0263-49db496667e54ab0b6528e7dee2d329c.jpg',
+      description: "Sit on the floor or a prop with the soles of your feet pressing into each other.",
+    },
+  ]
+  const renderData = (item) => {
+    return(
+      <Card style = {styles.card}>
+        <Card.Cover source={{ uri: item.image }}/>
+        <Text style = {{fontSize:25}}>{item.name}</Text>
+        <Text style = {{fontSize:15}}>{item.description}</Text>
+      </Card>   
+    )
+  }
+  return (
+    <View style={styles.container}>
+      <Text style={styles.heading}>Warm ups</Text>
+      <Text style={styles.text}>Warming up before exercising can help increase performance and reduce chances of injury. Do these warm ups before you start your exercise.</Text>
+      <FlatList
+      data = {stretches}
+      renderItem = {({item}) => {
+          return renderData(item)
+      }}
+      keyExtractor = {item => `${item.id}`}
+      />
+      <TouchableOpacity 
+          style={styles.homeButton} 
+          onPress={() => navigation.navigate('Home')}>
+            <Text style={styles.btnText}>Home</Text>
+      </TouchableOpacity>  
+    </View>
+  )
+}
+
 function Cooldown({navigation}) {
   //storing the number of seconds and setting seconds to 45
   let [seconds, setSeconds] = useState(45);
@@ -63,57 +112,6 @@ function Cooldown({navigation}) {
     </View>
   );
 };
-
-
-
-function Warmups({navigation}){
-  let stretches = [
-    { 
-      id: 1,  
-      name: "Standing Hamstring Stretch", 
-      image: 'https://media.self.com/photos/5a305db96c2fc24013a0aa78/master/w_728,c_limit/2_1Self.jpg',
-    },
-    { 
-      id: 2, 
-      name: "Triceps stretch", 
-      image: 'https://www.womenfitness.net/img2016/components/flex-triceps-stretch.jpg',
-      description: "Bend your right elbow and reach your right hand to touch the top middle of your back.",
-    },
-    { 
-      id: 3,  
-      name: "Butterfly stretch",
-      image: 'https://www.verywellfit.com/thmb/umsZNk7EYmmCNb6N_NQtw7SC4yA=/2667x2000/smart/filters:no_upscale()/87-3120294-ButterflyStretches0263-49db496667e54ab0b6528e7dee2d329c.jpg',
-      description: "Sit on the floor or a prop with the soles of your feet pressing into each other.",
-    },
-  ]
-  const renderData = (item) => {
-    return(
-      <Card style = {styles.card}>
-        <Card.Cover source={{ uri: item.image }}/>
-        <Text style = {{fontSize:25}}>{item.name}</Text>
-        <Text style = {{fontSize:15}}>{item.description}</Text>
-      </Card>   
-    )
-  }
-  return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>Warm ups</Text>
-      <Text style={styles.text}>Warming up before exercising can help increase performance and reduce chances of injury. Do these warm ups before you start your exercise.</Text>
-      <FlatList
-      data = {stretches}
-      renderItem = {({item}) => {
-          return renderData(item)
-      }}
-      keyExtractor = {item => `${item.id}`}
-      />
-      <TouchableOpacity 
-          style={styles.homeButton} 
-          onPress={() => navigation.navigate('Home')}>
-            <Text style={styles.btnText}>Home</Text>
-      </TouchableOpacity>  
-    </View>
-  )
-}
 
 
 function ExerciseScreen({ route, navigation }) {
