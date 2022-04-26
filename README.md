@@ -1,4 +1,4 @@
-# portfolio-2
+# Workout Plan App
 
 This react native project is a workout plan app that includes four screens and three main components. 
 
