@@ -15,6 +15,7 @@ function Warmups({navigation}){
       id: 1,  
       name: "Standing Hamstring Stretch", 
       image: 'https://media.self.com/photos/5a305db96c2fc24013a0aa78/master/w_728,c_limit/2_1Self.jpg',
+      description: "Stand with your feet together and bend forward at the hips. Wrap your arms around the backs of your legs and hold the position.",
     },
     { 
       id: 2, 
